@@ -1,19 +1,74 @@
-# Starlight Starter Kit: Basics
+# Orchestra Platform Documentation
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/60e9ed33-676c-4e4c-84ab-7980d564e880/deploy-status)](https://app.netlify.com/projects/orchestraplatform-docs/deploys)
 
+This repository contains the documentation for the Orchestra Platform, built with [Astro](https://astro.build/) and [Starlight](https://starlight.astro.build/).
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18 or higher  
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
 ```
-npm create astro@latest -- --template starlight
+
+### Development
+
+```bash
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/withastro/starlight&create_from_path=examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+This starts the development server at `http://localhost:4321`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Deployment
 
-## 🚀 Project Structure
+### Netlify Deployment
+
+This site is configured for automatic deployment to Netlify:
+
+1. **Connect Repository**: Link your GitHub repository to Netlify
+2. **Build Settings**: 
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Node version: 18
+3. **Custom Domain**: Configure `docs.orchestraplatform.org` as a custom domain
+4. **SSL**: Netlify will automatically provision SSL certificates
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/orchestraplatform/orchestra-docs)
+
+### Manual Build
+
+```bash
+npm run build
+```
+
+The built site will be in the `dist/` directory.
+
+### Custom Domain Setup
+
+To configure `docs.orchestraplatform.org`:
+
+1. **In Netlify Dashboard**:
+   - Go to Site settings → Domain management
+   - Add custom domain: `docs.orchestraplatform.org`
+
+2. **DNS Configuration**:
+   - Add a CNAME record in your DNS provider:
+   ```
+   docs.orchestraplatform.org → YOUR_NETLIFY_SITE.netlify.app
+   ```
+
+3. **SSL Certificate**:
+   - Netlify will automatically provision a Let's Encrypt SSL certificate
+   - Your site will be available at `https://docs.orchestraplatform.org`
+
+## 📁 Project Structure
 
 Inside of your Astro + Starlight project, you'll see the following folders and files:
 
