@@ -40,8 +40,6 @@ This site is configured for automatic deployment to Netlify:
 3. **Custom Domain**: Configure `docs.orchestraplatform.org` as a custom domain
 4. **SSL**: Netlify will automatically provision SSL certificates
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/orchestraplatform/orchestra-docs)
-
 ### Manual Build
 
 ```bash
@@ -50,6 +48,12 @@ npm run build
 
 The built site will be in the `dist/` directory.
 
+```bash
+netlify deploy --prod
+```
+
+will deploy the site to production. 
+
 ### Custom Domain Setup
 
 To configure `docs.orchestraplatform.org`:
@@ -57,6 +61,7 @@ To configure `docs.orchestraplatform.org`:
 1. **In Netlify Dashboard**:
    - Go to Site settings → Domain management
    - Add custom domain: `docs.orchestraplatform.org`
+   - You'll probably need to verify ownership via DNS TXT record or email verification.
 
 2. **DNS Configuration**:
    - Add a CNAME record in your DNS provider:
@@ -67,6 +72,7 @@ To configure `docs.orchestraplatform.org`:
 3. **SSL Certificate**:
    - Netlify will automatically provision a Let's Encrypt SSL certificate
    - Your site will be available at `https://docs.orchestraplatform.org`
+   - In some cases like with Cloudflare, it will handle SSL certificates automatically.
 
 ## 📁 Project Structure
 
@@ -77,6 +83,7 @@ Inside of your Astro + Starlight project, you'll see the following folders and f
 ├── public/
 ├── src/
 │   ├── assets/
+│   ├── components/
 │   ├── content/
 │   │   └── docs/
 │   └── content.config.ts
@@ -103,6 +110,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `netlify deploy --prod`   | Deploy the site to production on Netlify         |
 
 ## 👀 Want to learn more?
 
