@@ -1,11 +1,31 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+const googleAnalyticsId = 'G-KLLV1GCF4E';
 
 export default defineConfig({
   integrations: [
     starlight({
       title: 'Orchestra Platform',
       description: 'Documentation for the Orchestra Platform - Bioinformatics and Data Science Learning Environment',
+      head: [
+        // Adding google analytics
+        {
+          tag: 'script',
+          attrs: {
+            src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`,
+          },
+        },
+        {
+          tag: 'script',
+          content: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${googleAnalyticsId}');
+          `,
+        },
+      ],
       social: [
         {
           icon: 'github',
